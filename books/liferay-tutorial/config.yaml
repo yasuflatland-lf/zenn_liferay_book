@@ -1,0 +1,18 @@
+title: "Liferayを始めてみよう"
+summary: |-
+  オープンソースの開発プラットフォーム・ポータルプラットフォームLiferayの、バージョンに依存しない基礎的な使い方を紹介します。
+
+  取り急ぎ動かしたい、という方はQuick Startを参照ください。
+topics: ["java", "フレームワーク"]
+published: true
+price: 0
+toc_depth: 3
+chapters:
+  - chapter1
+  - chapter2
+  - chapter3
+  - chapter4
+  - chapter5
+  - chapter6
+  - chapter7
+  - chapter8
