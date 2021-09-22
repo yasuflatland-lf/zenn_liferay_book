@@ -1,8 +1,9 @@
 ---
 title: "Liferayを使う準備"
-free: false
+type: "tech"
+topics: ["liferay", "java", "portal", "osgi"]
+published: true
 ---
-
 # Liferay 7 / DXPのインストール(Tomcatバンドル)
 ## Dockerのインストール
 Dockerのインストールは[Macはこちらから](https://docs.docker.com/docker-for-mac/install/)、[Windowsはこちらを参考に](https://docs.docker.com/docker-for-windows/install/)インストールしてください。
