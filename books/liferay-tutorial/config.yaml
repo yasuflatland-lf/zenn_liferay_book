@@ -1,4 +1,4 @@
-title: "Liferayを始めてみよう"
+title: "Liferay実践入門"
 summary: |-
   オープンソースの開発プラットフォーム・ポータルプラットフォームLiferayの、バージョンに依存しない基礎的な使い方を紹介します。
 
@@ -6,7 +6,7 @@ summary: |-
 topics: ["java", "フレームワーク"]
 published: true
 price: 0
-toc_depth: 3
+toc_depth: 2
 chapters:
   - chapter1
   - chapter2
