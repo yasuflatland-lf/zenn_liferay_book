@@ -12,7 +12,7 @@ Dockerのインストールは[Macはこちらから](https://docs.docker.com/do
 データベースはMySQL5.7を利用します。すでに使用している方はそのサーバーを利用してください。データベースの環境が何もない方は、拙作の[Docker Composeをご利用](https://github.com/yasuflatland-lf/mysql-compose)ください。Gitをインストールしていない方は、リポジトリの`Code`ボタンをクリック、コードをダウンロードしてください。
 
 リポジトリのルートディレクトリで
-```
+```bash
 docker-compose up --build
 ```
 とすると起動します。自動的に73ee, 73ceのデータベースが作成されています。データベースはutf8mb4で作成する必要があります。（でないと、🍣と🍺や、旧字体の漢字などが正しくデータベースに保存されません。)
@@ -42,7 +42,8 @@ docker-compose up --build
 
 ## Mac
 利用しているシェルの設定ファイルに以下を記述。(Mac標準のzshで、`.zshrc`を利用していることを想定。JDK8を利用している場合は`-v 1.8`を利用、JDK11の場合は`-v 11`の方を利用し、一方をコメントアウトする。以下はJDK8を利用している場合。
-```
+
+```bash
 # JDK11の場合は以下のコメントを外し、1.8の方をコメントアウト
 # export JAVA_HOME=`/usr/libexec/java_home -v 11`
 
@@ -60,7 +61,7 @@ export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 ### Windows
 1. ダウンロードしたバンドル(Tomcatバンドル版をダウンロードすることを想定しています。）をCドライブ直下などに解凍する。ユーザーホーム（デスクトップなど）で解凍すると、パスが長すぎて解凍できない、というようなエラーが発生する可能性があります。
 1. 解凍したルートディレクトリを```${liferay_home}```とした場合、そこに`portal-ext.properties`という名前でファイルを作成し、以下を参考にの内容を保存します。`lrportal`の部分は、ご自身のデータベース名に変更してください。
-   ```
+   ```bash
    jdbc.default.driverClassName=com.mysql.cj.jdbc.Driver
    jdbc.default.url=jdbc:mysql://mysql/lrportal?connectionCollation=utf8mb4_bin&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&serverTimezone=GMT&useFastDateParsing=false&useUnicode=true&characterEncoding=utf8
    jdbc.default.username=root
@@ -68,14 +69,14 @@ export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
    ```
 3. `${liferay_home}¥tomcat-8.0.32¥bin`に移動します。(Tomcatのバージョンは新しくなっている可能性があります)
 4. メモリに余裕がある場合、`setenv.bat`の`CATALINA_OPTS`を以下のように変更します。
-   ```
+   ```bash
    CATALINA_OPTS="$CATALINA_OPTS -Dfile.encoding=UTF-8 -Djava.locale.providers=JRE,COMPAT,CLDR -Djava.net.preferIPv4Stack=true -Duser.timezone=GMT -Xms4G -Xmx4G -XX:MaxNewSize=1536m -XX:MaxMetaspaceSize=768m -XX:MetaspaceSize=768m -XX:NewSize=1536m -XX:SurvivorRatio=7"
 1. ```startup.bat```をダブルクリックすると、Liferayが起動します。
 
 ### Mac
 1. ダウンロードしたバンドル(Tomcatバンドル版をダウンロードすることを想定しています。）を解凍する。
 1. 解凍したルートディレクトリを```${liferay_home}```とした場合、そこに`portal-ext.properties`という名前でファイルを作成し、以下を参考にの内容を保存します。`lrportal`の部分は、ご自身のデータベース名に変更してください。
-   ```
+   ```bash
    jdbc.default.driverClassName=com.mysql.cj.jdbc.Driver
    jdbc.default.url=jdbc:mysql://mysql/lrportal?connectionCollation=utf8mb4_bin&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&serverTimezone=GMT&useFastDateParsing=false&useUnicode=true&characterEncoding=utf8
    jdbc.default.username=root
@@ -83,6 +84,6 @@ export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
    ```
 3. ```${liferay_home}/tomcat-8.0.32/bin```に移動します。(Tomcatのバージョンは新しくなっている可能性があります)
 4. メモリに余裕がある場合、`setenv.bat`の`CATALINA_OPTS`を以下のように変更します。
-   ```
+   ```bash
    CATALINA_OPTS="$CATALINA_OPTS -Dfile.encoding=UTF-8 -Djava.locale.providers=JRE,COMPAT,CLDR -Djava.net.preferIPv4Stack=true -Duser.timezone=GMT -Xms4G -Xmx4G -XX:MaxNewSize=1536m -XX:MaxMetaspaceSize=768m -XX:MetaspaceSize=768m -XX:NewSize=1536m -XX:SurvivorRatio=7"
 3. `./startup.sh run`を実行すると、Liferayが起動します。
